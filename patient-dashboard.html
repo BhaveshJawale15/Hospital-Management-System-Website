@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard | CityCare Hospital</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-hospital-user"></i>
+                <span>CityCare<span>+</span></span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i class="fas fa-th-large"></i> Dashboard</a>
+                <a href="#"><i class="fas fa-file-medical"></i> Medical Records</a>
+                <a href="#"><i class="fas fa-prescription"></i> Prescriptions</a>
+                <a href="#"><i class="fas fa-flask"></i> Lab Reports</a>
+                <a href="#"><i class="fas fa-video"></i> Telemedicine</a>
+                <a href="#"><i class="fas fa-user-cog"></i> Profile Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="login.html" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="welcome-text">
+                    <h1>Patient Dashboard</h1>
+                    <p>Welcome back, <span id="dashUserName">John Doe</span></p>
+                </div>
+                <div class="user-pill">
+                    <span id="userInitial">J</span>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <span class="label">NEXT APPOINTMENT</span>
+                    <div class="value">Oct 28, 10:00 AM</div>
+                </div>
+                <div class="stat-card">
+                    <span class="label">BLOOD GROUP</span>
+                    <div class="value" id="bloodGroupDisplay">O Positive</div>
+                </div>
+                <div class="stat-card">
+                    <span class="label">PENDING BILLS</span>
+                    <div class="value highlight">₹2000.00</div>
+                </div>
+            </section>
+
+            <section class="booking-section">
+                <h2>Schedule a New Consultation</h2>
+                <form class="booking-form">
+                    <div class="input-group">
+                        <label>Department/Specialist</label>
+                        <select>
+                            <option>Cardiology</option>
+                            <option>Neurology</option>
+                            <option>Pediatrics</option>
+                            <option>General Medicine</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Preferred Slot</label>
+                        <input type="datetime-local">
+                    </div>
+                    <button type="submit" class="btn-confirm">Confirm Booking</button>
+                </form>
+            </section>
+
+            <section class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dr. Sarah Smith</td>
+                                <td>Oct 12, 2025</td>
+                                <td>Check-up</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td><a href="#" class="view-btn">View Report</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

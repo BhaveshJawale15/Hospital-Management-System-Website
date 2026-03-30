@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard | CityCare Hospital</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-user-md"></i>
+                <span>CityCare<span>+</span></span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i class="fas fa-users"></i> Patient Queue</a>
+                <a href="#"><i class="fas fa-file-medical-alt"></i> Health Records</a>
+                <a href="#"><i class="fas fa-pills"></i> Prescription Gen</a>
+                <a href="#"><i class="fas fa-calendar-check"></i> My Schedule</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="welcome-text">
+                    <h1>Doctor's Portal</h1>
+                    <p>Welcome back, <span id="docName">Dr. Smith</span></p>
+                </div>
+                <div class="status-toggle">
+                    <span class="status-dot online"></span> Active for Consultation
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card highlight-border">
+                    <span class="label">CURRENT PATIENT</span>
+                    <div class="value">Bhavesh Jawale</div>
+                    <p class="sub-value">Room 402 • General Checkup</p>
+                </div>
+                <div class="stat-card">
+                    <span class="label">WAITING IN QUEUE</span>
+                    <div class="value">12 Patients</div>
+                </div>
+                <div class="stat-card">
+                    <span class="label">TODAY'S TOTAL</span>
+                    <div class="value">28 Appointments</div>
+                </div>
+            </section>
+
+            <section class="ehr-section">
+                <div class="section-header-flex">
+                    <h2>Consultation & EHR</h2>
+                    <span class="patient-id">ID: #PT-90288</span>
+                </div>
+                <form class="ehr-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label>Symptoms / Chief Complaint</label>
+                            <textarea placeholder="Enter symptoms here..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row grid-2">
+                        <div class="input-group">
+                            <label>Diagnosis</label>
+                            <input type="text" placeholder="e.g. Seasonal Flu">
+                        </div>
+                        <div class="input-group">
+                            <label>Prescribe Medication</label>
+                            <select>
+                                <option>Select from Pharmacy Database</option>
+                                <option>Amoxicillin 500mg</option>
+                                <option>Paracetamol 650mg</option>
+                                <option>Cetirizine 10mg</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-outline">Add Lab Test</button>
+                        <button type="submit" class="btn-confirm">Generate Prescription & Finish</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="recent-activity">
+                <h2>Upcoming Appointments</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Queue #</th>
+                                <th>Patient Name</th>
+                                <th>Time Slot</th>
+                                <th>Priority</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#01</td>
+                                <td>Alice Johnson</td>
+                                <td>10:30 AM</td>
+                                <td><span class="prio-tag high">High</span></td>
+                                <td><button class="view-btn">Call Next</button></td>
+                            </tr>
+                            <tr>
+                                <td>#02</td>
+                                <td>Mark Williams</td>
+                                <td>11:00 AM</td>
+                                <td><span class="prio-tag normal">Normal</span></td>
+                                <td><button class="view-btn">Wait</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

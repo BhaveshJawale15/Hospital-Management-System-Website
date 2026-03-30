@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | CityCare Hospital</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar admin-theme">
+            <div class="sidebar-logo">
+                <i class="fas fa-user-shield"></i>
+                <span>CityCare<span>+</span></span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i class="fas fa-chart-line"></i> Overview</a>
+                <a href="#"><i class="fas fa-users-cog"></i> User Management</a>
+                <a href="#"><i class="fas fa-file-invoice-dollar"></i> Billing & Finance</a>
+                <a href="#"><i class="fas fa-boxes"></i> Inventory</a>
+                <a href="#"><i class="fas fa-bed"></i> Bed Management</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="welcome-text">
+                    <h1>System Administration</h1>
+                    <p>Hospital Status: <span class="status-badge online">Operational</span></p>
+                </div>
+                <div class="admin-profile">
+                    <i class="fas fa-bell"></i>
+                    <div class="user-pill">A</div>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <span class="label">TOTAL DOCTORS</span>
+                    <div class="value">42</div>
+                </div>
+                <div class="stat-card">
+                    <span class="label">REVENUE (MONTHLY)</span>
+                    <div class="value highlight">₹1,500,000</div>
+                </div>
+                <div class="stat-card">
+                    <span class="label">BED OCCUPANCY</span>
+                    <div class="value">82%</div>
+                </div>
+            </section>
+
+            <section class="bed-section">
+                <h2>Ward A: Bed Management</h2>
+                <div class="bed-grid">
+                    <div class="bed occupied" title="Patient: Mark S.">101</div>
+                    <div class="bed occupied">102</div>
+                    <div class="bed vacant">103</div>
+                    <div class="bed occupied">104</div>
+                    <div class="bed vacant">105</div>
+                    <div class="bed vacant">106</div>
+                    <div class="bed occupied">107</div>
+                    <div class="bed cleaning">108</div>
+                </div>
+                <div class="bed-legend">
+                    <span class="legend-item"><span class="box occupied"></span> Occupied</span>
+                    <span class="legend-item"><span class="box vacant"></span> Vacant</span>
+                    <span class="legend-item"><span class="box cleaning"></span> Cleaning</span>
+                </div>
+            </section>
+
+            <div class="admin-grid-row">
+                <section class="inventory-card">
+                    <h2>Inventory Alerts</h2>
+                    <div class="inventory-list">
+                        <div class="item">
+                            <span>Surgical Masks</span>
+                            <span class="stock low">240 (Low)</span>
+                        </div>
+                        <div class="item">
+                            <span>Paracetamol</span>
+                            <span class="stock">1,200</span>
+                        </div>
+                        <div class="item">
+                            <span>Oxygen Tanks</span>
+                            <span class="stock">15</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="user-card">
+                    <h2>Add New Staff</h2>
+                    <form class="quick-form">
+                        <input type="text" placeholder="Full Name">
+                        <select>
+                            <option>Doctor</option>
+                            <option>Nurse</option>
+                            <option>Lab Tech</option>
+                        </select>
+                        <button type="button" class="btn-confirm">Create Account</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

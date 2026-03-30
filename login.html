@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Login | CityCare Hospital</title> 
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body> 
+
+<div class="login-wrapper"> 
+
+    <div class="side-banner"> 
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+             alt="Hospital Corridors" class="banner-img"> 
+        <div class="banner-overlay"></div>
+        <div class="banner-content"> 
+            <i class="fas fa-hospital-user main-icon"></i> 
+            <h1>CityCare Hospital</h1> 
+            <p>Your health, our priority. Access your portal securely.</p> 
+        </div> 
+    </div> 
+
+    <div class="form-section"> 
+        <div class="form-container"> 
+
+            <div class="mobile-logo"> 
+                <i class="fas fa-hospital-user"></i> 
+                <h2>CityCare<span>+</span></h2> 
+            </div> 
+
+            <div class="header-text"> 
+                <h2>Welcome Back</h2> 
+                <p>Please select your role and log in to continue.</p> 
+            </div> 
+
+            <div class="role-tabs" id="role-tabs"> 
+                <button type="button" onclick="selectRole('patient')" id="tab-patient" class="tab active"> 
+                    <i class="fas fa-user"></i> Patient 
+                </button> 
+                <button type="button" onclick="selectRole('doctor')" id="tab-doctor" class="tab"> 
+                    <i class="fas fa-user-md"></i> Doctor 
+                </button> 
+                <button type="button" onclick="selectRole('admin')" id="tab-admin" class="tab"> 
+                    <i class="fas fa-user-shield"></i> Admin 
+                </button> 
+            </div>
+
+            <form id="login-form" class="login-form"> 
+                <div class="input-group"> 
+                    <label for="email">Email Address / ID</label> 
+                    <div class="input-wrapper"> 
+                        <i class="fas fa-envelope"></i> 
+                        <input type="email" id="email" placeholder="you@example.com" required> 
+                    </div> 
+                </div> 
+
+                <div class="input-group"> 
+                    <label for="password">Password</label> 
+                    <div class="input-wrapper"> 
+                        <i class="fas fa-lock"></i> 
+                        <input type="password" id="password" placeholder="••••••••" required> 
+                    </div> 
+                </div> 
+
+                <div class="form-footer"> 
+                    <label class="remember-me"> 
+                        <input type="checkbox"> Remember me 
+                    </label> 
+                    <div class="footer-links">
+                        <a href="#" class="forgot-pass">Forgot password?</a>
+                        <span id="link-separator" class="separator">|</span>
+                        <a href="register.html" id="register-link" class="register-link">Create account</a>
+                    </div>
+                </div> 
+
+                <button type="submit" id="btn-login" class="btn-login">Sign In</button>
+                
+
+            </form> 
+        </div> 
+    </div> 
+</div> 
+
+<script src="login.js"></script>
+</body>
+</html>
