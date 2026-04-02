@@ -259,6 +259,13 @@ body {
 
 
 
+
+
+
+
+
+
+
 /* register style */
 .switch-form {
     text-align: center;
@@ -274,14 +281,104 @@ body {
 }
 
 .status-msg {
-    background-color: #d1fae5; /* Light green */
-    color: #065f46; /* Dark green */
-    padding: 1rem;
+    /* Visuals */
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 0.8rem 2rem;
     border-radius: 8px;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-weight: 600;
     border: 1px solid #10b981;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* Floating Positioning */
+    position: absolute;  /* Key: Takes it out of the layout flow */
+    top: 20px;           /* Little margin from the top */
+    left: 50%;           /* Move to center of screen */
+    transform: translateX(-50%); /* Offset by half its width to perfectly center */
+    
+    z-index: 1000;       /* Ensures it stays above the banner and form */
+    
+    width: fit-content;
+    min-width: 280px;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }
 
 .hidden { display: none; }
+
+/* Grid for DOB and Gender */
+.input-row {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Gives DOB slightly more space than Gender */
+    gap: 15px;
+    width: 100%;
+}
+
+/* Ensure select dropdown matches your input styling */
+.input-wrapper select {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Fix for date input appearance */
+input[type="date"] {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Responsive fix for small screens */
+@media (max-width: 480px) {
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+}
+
+
+/* Specific fix for the Gender Select overlap */
+.input-wrapper select#gender {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    font-size: 1rem;
+    appearance: none
+}
+
+.input-group:has(#gender) .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+/* Ensures the icon stays behind the select but visible */
+.input-wrapper i.fa-venus-mars {
+    position: absolute;
+    left: 12px;
+    z-index: 1;
+    pointer-events: none; /* Allows you to click the select through the icon */
+}
+
+/* Optional: Adds a clean dropdown arrow on the right side */
+.input-group:has(#gender) .input-wrapper::after {
+    content: '\f107'; 
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    color: #888;
+    pointer-events: none;
+}

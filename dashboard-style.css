@@ -167,27 +167,79 @@ body {
     align-items: flex-end; 
 }
 
-.input-group { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 8px; 
-    flex: 1; 
+/* Container for the settings form */
+.settings-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-top: 20px;
 }
 
-.input-group label { 
-    font-size: 0.875rem; 
-    font-weight: 600; 
-    color: var(--slate-600); 
+/* Creating the 2-column grid */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-.input-group select, .input-group input { 
-    padding: 0.75rem; 
-    border: 1px solid #e2e8f0; 
-    border-radius: 8px; 
-    background: #f8fafc; 
+/* Input Group Styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.btn-confirm { 
+.input-group label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+/* Standardizing all input types */
+.profile-form input, 
+.profile-form .custom-select {
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.profile-form input:focus, 
+.profile-form .custom-select:focus {
+    outline: none;
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+.btn-confirm {
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-confirm:hover {
+    background-color: #1d4ed8;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.btn-print { 
     background: var(--blue-600); 
     color: white; 
     border: none; 
@@ -195,8 +247,8 @@ body {
     border-radius: 8px; 
     font-weight: 600; 
     cursor: pointer; 
+    margin-top: 1rem;
 }
-
 
 
 /* Table Section */
@@ -239,6 +291,118 @@ td {
     font-size: 0.875rem; 
     font-weight: 600; 
 }
+
+.tab-content {
+    display: none; /* Hide everything */
+}
+
+.tab-content.active {
+    display: block; /* Show only the one with the 'active' class */
+}
+
+/* Maintain consistency for headings inside the tabs */
+.tab-content h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Extra Styling for new sections */
+.info-card, .tele-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.report-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.report-card i { font-size: 2rem; color: var(--blue-600); margin-bottom: 10px; }
+
+/* Container for the booking section */
+.booking-section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+/* Grid layout for the form */
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto; /* Two inputs and one button in a row */
+    gap: 20px;
+    align-items: flex-end; /* Aligns the button with the inputs, not the labels */
+}
+
+/* Input group behavior */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+/* Styling the select and date inputs */
+.input-group select, 
+.input-group input[type="datetime-local"] {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f8fafc;
+    width: 100%;
+}
+
+/* Specific styling for the button in this row */
+.booking-grid .btn-confirm {
+    height: 48px; /* Matches the height of the inputs */
+    padding: 0 30px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.booking-grid .btn-confirm:hover {
+    background-color: #1d4ed8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .booking-grid {
+        grid-template-columns: 1fr; /* Stack inputs on small screens */
+    }
+    
+    .booking-grid .btn-confirm {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
 
 
 
@@ -354,6 +518,112 @@ td {
     color: #22c55e; 
 }
 
+/* --- Tab Visibility --- */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- New Action Buttons --- */
+.btn-call {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 5px;
+}
+
+.btn-call:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.btn-wait {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-wait:hover {
+    background-color: #e0a800;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+/* --- Section Specific Styles --- */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.prescription-pad {
+    background: #fdfdfd;
+    border: 2px dashed #ccc;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.pad-header {
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    color: #007bff;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.day-card {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.day-card.active {
+    background: #e7f1ff;
+    border-color: #007bff;
+}
+
+.day-card h3 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.text-urgent {
+    color: #dc3545;
+    font-weight: bold;
+}
 
 
 
@@ -487,3 +757,63 @@ td {
     border: 1px solid #e2e8f0;
     border-radius: 8px;
 }
+
+/* --- Tab Control --- */
+.tab-content {
+    display: none;
+    animation: slideUp 0.4s ease forwards;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Admin Theming --- */
+
+.text-urgent {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* --- Table Styles (Shared) --- */
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #f0f0f0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #f9f9f9;
+    color: #333;
+}
+
+/* --- Buttons for Admin --- */
+
+.btn-outline:hover {
+    background: #3498db;
+    color: white;
+}
+
+

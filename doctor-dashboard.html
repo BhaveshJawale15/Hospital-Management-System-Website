@@ -1,125 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Dashboard | CityCare Hospital</title>
-    <link rel="stylesheet" href="dashboard-style.css">
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Doctor Dashboard | CityCare Hospital</title> 
+    <link rel="stylesheet" href="dashboard-style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <div class="dashboard-wrapper">
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <i class="fas fa-user-md"></i>
-                <span>CityCare<span>+</span></span>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="#" class="active"><i class="fas fa-users"></i> Patient Queue</a>
-                <a href="#"><i class="fas fa-file-medical-alt"></i> Health Records</a>
-                <a href="#"><i class="fas fa-pills"></i> Prescription Gen</a>
-                <a href="#"><i class="fas fa-calendar-check"></i> My Schedule</a>
-                <a href="#"><i class="fas fa-cog"></i> Settings</a>
-            </nav>
-            <div class="sidebar-footer">
-                <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
-            </div>
-        </aside>
+<body> 
+<div class="dashboard-wrapper"> 
+    <aside class="sidebar"> 
+        <div class="sidebar-logo"> 
+            <i class="fas fa-user-md"></i> 
+            <span>CityCare<span>+</span></span> 
+        </div> 
+        <nav class="sidebar-nav"> 
+            <a href="#" class="nav-link active" data-target="patient-queue"><i class="fas fa-users"></i> Patient Queue</a> 
+            <a href="#" class="nav-link" data-target="health-records"><i class="fas fa-file-medical-alt"></i> Health Records</a> 
+            <a href="#" class="nav-link" data-target="prescription-gen"><i class="fas fa-pills"></i> Prescription Gen</a> 
+            <a href="#" class="nav-link" data-target="my-schedule"><i class="fas fa-calendar-check"></i> My Schedule</a> 
+            <a href="#" class="nav-link" data-target="settings"><i class="fas fa-cog"></i> Settings</a> 
+        </nav> 
+        <div class="sidebar-footer"> 
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a> 
+        </div> 
+    </aside> 
 
-        <main class="main-content">
-            <header class="dashboard-header">
-                <div class="welcome-text">
-                    <h1>Doctor's Portal</h1>
-                    <p>Welcome back, <span id="docName">Dr. Smith</span></p>
-                </div>
-                <div class="status-toggle">
-                    <span class="status-dot online"></span> Active for Consultation
-                </div>
-            </header>
+    <main class="main-content"> 
+        <header class="dashboard-header"> 
+            <div class="welcome-text"> 
+                <h1>Doctor's Portal</h1> 
+                <p>Welcome back, <span id="docName">Dr. Smith</span></p> 
+            </div> 
+            <div class="status-toggle"> 
+                <span class="status-dot online"></span> Active for Consultation 
+            </div> 
+        </header>
 
-            <section class="stats-grid">
-                <div class="stat-card highlight-border">
-                    <span class="label">CURRENT PATIENT</span>
-                    <div class="value">Bhavesh Jawale</div>
-                    <p class="sub-value">Room 402 • General Checkup</p>
-                </div>
-                <div class="stat-card">
-                    <span class="label">WAITING IN QUEUE</span>
-                    <div class="value">12 Patients</div>
-                </div>
-                <div class="stat-card">
-                    <span class="label">TODAY'S TOTAL</span>
-                    <div class="value">28 Appointments</div>
+        <div id="patient-queue" class="tab-content active">
+            <section class="stats-grid"> 
+                <div class="stat-card highlight-border"> 
+                    <span class="label">CURRENT PATIENT</span> 
+                    <div class="value">Bhavesh Jawale</div> 
+                    <p class="sub-value">Room 402 • General Checkup</p> 
+                </div> 
+                <div class="stat-card"> 
+                    <span class="label">WAITING IN QUEUE</span> 
+                    <div class="value">12 Patients</div> 
+                </div> 
+                <div class="stat-card"> 
+                    <span class="label">TODAY'S TOTAL</span> 
+                    <div class="value">28 Appointments</div> 
+                </div> 
+            </section> 
+
+            <section class="ehr-section"> 
+                <div class="section-header-flex"> 
+                    <h2>Consultation & EHR</h2> 
+                    <span class="patient-id">ID: #PT-90288</span> 
+                </div> 
+                <form class="ehr-form"> 
+                    <div class="form-row"> 
+                        <div class="input-group"> 
+                            <label>Symptoms / Chief Complaint</label> 
+                            <textarea placeholder="Enter symptoms here..."></textarea> 
+                        </div> 
+                    </div> 
+                    <div class="form-row grid-2"> 
+                        <div class="input-group"> 
+                            <label>Diagnosis</label> 
+                            <input type="text" placeholder="e.g. Seasonal Flu"> 
+                        </div> 
+                        <div class="input-group"> 
+                            <label>Prescribe Medication</label> 
+                            <select> 
+                                <option>Select from Pharmacy Database</option> 
+                                <option>Amoxicillin 500mg</option> 
+                                <option>Paracetamol 650mg</option> 
+                                <option>Cetirizine 10mg</option> 
+                            </select> 
+                        </div> 
+                    </div> 
+                    <div class="form-actions"> 
+                        <button type="button" class="btn-outline">Add Lab Test</button> 
+                        <button type="submit" class="btn-confirm">Generate Prescription & Finish</button> 
+                    </div> 
+                </form> 
+            </section> 
+
+            <section class="recent-activity"> 
+                <h2>Upcoming Appointments</h2> 
+                <div class="table-container"> 
+                    <table> 
+                        <thead> 
+                            <tr> 
+                                <th>Queue #</th> 
+                                <th>Patient Name</th> 
+                                <th>Time Slot</th> 
+                                <th>Priority</th> 
+                                <th>Action</th> 
+                            </tr> 
+                        </thead> 
+                        <tbody> 
+                            <tr>
+                                <td>05</td>
+                                <td>Rahul Verma</td>
+                                <td>11:30 AM</td>
+                                <td class="text-urgent">High</td>
+                                <td>
+                                    <button class="btn-call">Call Next</button>
+                                    <button class="btn-wait">Wait</button>
+                                </td>
+                            </tr>
+                        </tbody> 
+                    </table>
                 </div>
             </section>
+        </div>
 
+        <div id="health-records" class="tab-content">
             <section class="ehr-section">
-                <div class="section-header-flex">
-                    <h2>Consultation & EHR</h2>
-                    <span class="patient-id">ID: #PT-90288</span>
+                <h2>Patient Medical Archives</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search by Patient Name or ID...">
+                    <button class="btn-confirm">Search</button>
                 </div>
-                <form class="ehr-form">
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label>Symptoms / Chief Complaint</label>
-                            <textarea placeholder="Enter symptoms here..."></textarea>
-                        </div>
-                    </div>
-                    <div class="form-row grid-2">
-                        <div class="input-group">
-                            <label>Diagnosis</label>
-                            <input type="text" placeholder="e.g. Seasonal Flu">
-                        </div>
-                        <div class="input-group">
-                            <label>Prescribe Medication</label>
-                            <select>
-                                <option>Select from Pharmacy Database</option>
-                                <option>Amoxicillin 500mg</option>
-                                <option>Paracetamol 650mg</option>
-                                <option>Cetirizine 10mg</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-actions">
-                        <button type="button" class="btn-outline">Add Lab Test</button>
-                        <button type="submit" class="btn-confirm">Generate Prescription & Finish</button>
-                    </div>
-                </form>
-            </section>
-
-            <section class="recent-activity">
-                <h2>Upcoming Appointments</h2>
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
-                                <th>Queue #</th>
-                                <th>Patient Name</th>
-                                <th>Time Slot</th>
-                                <th>Priority</th>
+                                <th>Date</th>
+                                <th>Patient</th>
+                                <th>Diagnosis</th>
+                                <th>Files</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>#01</td>
-                                <td>Alice Johnson</td>
-                                <td>10:30 AM</td>
-                                <td><span class="prio-tag high">High</span></td>
-                                <td><button class="view-btn">Call Next</button></td>
-                            </tr>
-                            <tr>
-                                <td>#02</td>
-                                <td>Mark Williams</td>
-                                <td>11:00 AM</td>
-                                <td><span class="prio-tag normal">Normal</span></td>
-                                <td><button class="view-btn">Wait</button></td>
+                                <td>Oct 24, 2023</td>
+                                <td>Alice Cooper</td>
+                                <td>Hypertension</td>
+                                <td><i class="fas fa-file-pdf"></i> Report.pdf</td>
+                                <td><button class="btn-outline">View Details</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
-        </main>
-    </div>
+        </div>
+
+        <div id="prescription-gen" class="tab-content">
+            <section class="ehr-section">
+                <h2>Digital Prescription Pad</h2>
+                <div class="prescription-pad">
+                    <div class="pad-header">
+                        <p><strong>CityCare Hospital</strong> | Dr. Smith</p>
+                    </div>
+                    <div class="form-row grid-2">
+                        <div class="input-group"><label>Patient Name</label><input type="text"></div>
+                        <div class="input-group"><label>Age/Gender</label><input type="text"></div>
+                    </div>
+                    <div class="input-group">
+                        <label>Rx Instructions</label>
+                        <textarea rows="6" placeholder="Tab. Paracetamol 650mg - TDS - 3 Days"></textarea>
+                    </div>
+                    <button class="btn-print"><i class="fas fa-print"></i> Print & Save</button>
+                </div>
+            </section>
+        </div>
+
+        <div id="my-schedule" class="tab-content">
+            <section class="ehr-section">
+                <h2>Doctor's Weekly Rota</h2>
+                <div class="schedule-grid">
+                    <div class="day-card active"><h3>Mon</h3><p>09:00 - 17:00</p></div>
+                    <div class="day-card"><h3>Tue</h3><p>09:00 - 17:00</p></div>
+                    <div class="day-card"><h3>Wed</h3><p>Off Day</p></div>
+                    <div class="day-card"><h3>Thu</h3><p>11:00 - 19:00</p></div>
+                    <div class="day-card"><h3>Fri</h3><p>09:00 - 17:00</p></div>
+                </div>
+            </section>
+        </div>
+
+        <div id="settings" class="tab-content">
+            <section class="ehr-section">
+                <h2>Account Settings</h2>
+                <div class="form-row grid-2">
+                    <div class="input-group"><label>Email Notification</label><select><option>Enabled</option><option>Disabled</option></select></div>
+                    <div class="input-group"><label>Digital Signature</label><button class="btn-outline">Update Sign</button></div>
+                </div>
+                <button class="btn-print">Save Settings</button>
+            </section>
+        </div>
+
+    </main> 
+</div> 
+<script src="dashboard.js"></script>
 </body>
 </html>

@@ -67,6 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // register logic
 document.getElementById('register-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -104,4 +118,3 @@ document.getElementById('register-form').addEventListener('submit', function(e) 
         window.location.href = "login.html";
     }, 2000);
 });
-
