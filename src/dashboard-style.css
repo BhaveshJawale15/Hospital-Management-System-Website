@@ -189,6 +189,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin-bottom: 0;
 }
 
 .input-group label {
@@ -286,10 +287,14 @@ td {
 }
 
 .view-btn { 
-    color: var(--blue-600); 
-    text-decoration: none; 
-    font-size: 0.875rem; 
-    font-weight: 600; 
+        background-color: #2563eb;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
 .tab-content {
