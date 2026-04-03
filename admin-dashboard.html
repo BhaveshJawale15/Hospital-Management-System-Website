@@ -33,7 +33,6 @@
                 <p>Hospital Status: <span class="status-badge online">Operational</span></p> 
             </div> 
             <div class="admin-profile"> 
-                <i class="fas fa-bell"></i> 
                 <div class="user-pill">A</div> 
             </div> 
         </header>
@@ -130,6 +129,7 @@
         </div>
 
         <div id="billing-section" class="tab-content">
+
             <section class="stats-grid">
                 <div class="stat-card">
                     <span class="label">PENDING INVOICES</span>
@@ -140,6 +140,38 @@
                     <div class="value">12 Active</div>
                 </div>
             </section>
+
+            <section class="ehr-section entry-card">
+                <div class="section-header-flex">
+                    <h2>Manual Billing Entry</h2>
+                </div>
+                <form class="billing-form">
+                    <div class="form-row grid-3">
+                        <div class="input-group">
+                            <label>Patient Name</label>
+                            <input type="text" placeholder="e.g. John Doe">
+                        </div>
+                        <div class="input-group">
+                            <label>Amount (₹)</label>
+                            <input type="number" placeholder="0.00">
+                        </div>
+                        <div class="input-group">
+                            <label>Payment Method</label>
+                            <select>
+                                <option>UPI</option>
+                                <option>Cash</option>
+                                <option>Card</option>
+                                <option>Insurance</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-confirm">Add Transaction</button>
+                        <button type="reset" class="btn-outline">Clear</button>
+                    </div>
+                </form>
+            </section>
+
             <section class="ehr-section">
                 <h2>Financial Transactions</h2>
                 <div class="table-container">
@@ -173,8 +205,57 @@
             <section class="ehr-section">
                 <div class="section-header-flex">
                     <h2>Central Inventory Stock</h2>
-                    <button class="btn-outline">Order Supplies</button>
+                    <div class="header-actions">
+                        <button class="btn-confirm" onclick="toggleModal('inventory-modal', true)">
+                            <i class="fas fa-plus"></i> Add Stock
+                        </button>
+                        <button class="btn-outline">Order Supplies</button>
+                    </div>
                 </div>
+
+                <div id="inventory-modal" class="modal-overlay">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Manual Stock Entry</h3>
+                            <button class="close-btn" onclick="toggleModal('inventory-modal', false)">&times;</button>
+                        </div>
+                        <form class="modal-form">
+                            <div class="input-group">
+                                <label>Item Name</label>
+                                <input type="text" placeholder="e.g. Surgical Gloves">
+                            </div>
+                            <div class="form-row grid-2">
+                                <div class="input-group">
+                                    <label>Category</label>
+                                    <select>
+                                        <option>Consumables</option>
+                                        <option>Medical Gas</option>
+                                        <option>Medicine</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Current Stock</label>
+                                    <input type="number" placeholder="0">
+                                </div>
+                            </div>
+                            <div class="form-row grid-2">
+                                <div class="input-group">
+                                    <label>Unit</label>
+                                    <input type="text" placeholder="e.g. Box (50pcs)">
+                                </div>
+                                <div class="input-group">
+                                    <label>Threshold</label>
+                                    <input type="number" placeholder="Min level">
+                                </div>
+                            </div>
+                            <div class="modal-actions">
+                                <button type="submit" class="btn-confirm">Save Record</button>
+                                <button type="button" class="btn-outline" onclick="toggleModal('inventory-modal', false)">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
                 <div class="table-container">
                     <table>
                         <thead>
@@ -231,23 +312,6 @@
     </main> 
 </div>
 
-<script>
-    // Navigation Logic
-    const links = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.tab-content');
-
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = link.getAttribute('data-target');
-
-            links.forEach(l => l.classList.remove('active'));
-            sections.forEach(s => s.classList.remove('active'));
-
-            link.classList.add('active');
-            document.getElementById(target).classList.add('active');
-        });
-    });
-</script>
+<script src="dashboard.js"></script>
 </body>
 </html>
