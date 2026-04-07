@@ -1,0 +1,387 @@
+:root {
+    --blue-600: #2563eb;
+    --blue-700: #1d4ed8;
+    --blue-100: #dbeafe;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-300: #d1d5db;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: var(--gray-50); 
+    color: var(--gray-900); 
+}
+
+.login-wrapper { 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+/* Banner Section */
+.side-banner {
+    display: none; /* Hidden on mobile */
+    width: 50%;
+    background: var(--blue-600);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) { 
+    .side-banner { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+} }
+
+.banner-img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.4;
+    mix-blend-mode: multiply;
+}
+
+.banner-content { 
+    position: relative; 
+    z-index: 10; 
+    text-align: center; 
+    color: white; 
+    padding: 0 2.5rem; 
+}
+.main-icon { 
+    font-size: 3.75rem; 
+    margin-bottom: 1rem; 
+}
+
+.banner-content h1 { 
+    font-size: 2.5rem; 
+    margin-bottom: 0.5rem; 
+}
+
+.banner-content p { 
+    color: var(--blue-100); 
+    font-size: 1.125rem; 
+}
+
+/* Form Section */
+.form-section { 
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 2rem; 
+    background: white; 
+}
+
+@media (min-width: 768px) { 
+    .form-section 
+    { 
+    width: 50%; 
+} }
+
+.form-cont{ 
+    width: 100%; 
+    max-width: 400px; 
+}
+
+.mobile-logo { 
+    text-align: center; 
+    margin-bottom: 2rem; 
+}
+
+@media (min-width: 768px) { 
+    .mobile-logo 
+    { 
+    display: none; 
+} }
+
+.mobile-logo i { 
+    color: var(--blue-600); 
+    font-size: 2.5rem; }
+
+.mobile-logo h2 span { 
+    color: var(--blue-600); 
+}
+
+
+.header-text h2 { 
+    font-size: 1.875rem; 
+    font-weight: 700; 
+    margin-bottom: 0.5rem; 
+}
+
+.header-text p { 
+    color: var(--gray-500); 
+    margin-bottom: 2rem; }
+
+
+/* Tabs */
+.role-tabs { 
+    display: flex; 
+    background: var(--gray-100); 
+    padding: 4px; 
+    border-radius: 8px; 
+    margin-bottom: 2rem; 
+}
+
+.tab {
+    flex: 1; 
+    border: none; 
+    padding: 0.5rem; 
+    border-radius: 6px;
+    background: transparent; 
+    color: var(--gray-500);
+    font-weight: 500; 
+    cursor: pointer; 
+    transition: all 0.2s;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 8px;
+}
+.tab.active { 
+    background: white; 
+    color: var(--blue-600); 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+
+}
+
+/* Form Elements */
+.input-group { 
+    margin-bottom: 1.5rem; 
+}
+.input-group label { 
+    display: block; 
+    font-size: 0.875rem; 
+    font-weight: 500;
+    color: var(--gray-700); 
+    margin-bottom: 0.25rem; 
+    margin-top: 10px;
+}
+
+.input-wrapper { 
+    position: relative; }
+
+.input-wrapper i { 
+    position: absolute; 
+    left: 12px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    color: var(--gray-300); 
+}
+
+.input-wrapper input {
+    width: 100%; 
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+    border: 1px solid var(--gray-300); 
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.input-wrapper input:focus { 
+    outline: none; 
+    border-color: var(--blue-600); 
+    box-shadow: 0 0 0 2px var(--blue-100); }
+
+.form-footer {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-size: 0.875rem; 
+    margin-bottom: 1.5rem; 
+    margin-top: 10px;
+}
+
+.remember-me { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    color: var(--gray-700); 
+}
+
+.forgot-pass { 
+    color: var(--blue-600); 
+    text-decoration: none; 
+    font-weight: 500; 
+}
+
+
+.btn-login {
+    width: 100%; 
+    padding: 0.75rem; 
+    background: var(--blue-600);
+    color: white;
+    border: none; 
+    border-radius: 6px;
+    font-weight: 600; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background 0.2s;
+}
+.btn-login:hover { 
+    background: var(--blue-700); 
+}
+
+.footer-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end; /* Keeps items aligned to the right */
+    min-height: 20px; /* Prevents layout jumping when link disappears */
+}
+
+.separator {
+    color: var(--gray-300);
+}
+
+.register-link {
+    color: var(--blue-600);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link:hover, .forgot-pass:hover {
+    text-decoration: underline;
+}
+
+/* State for when the button is "Loading" */
+.btn-login.loading {
+    background-color: var(--gray-500);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* register style */
+.switch-form {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+.switch-form a {
+    color: var(--blue-600);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.status-msg {
+    /* Visuals */
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    border: 1px solid #10b981;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* Floating Positioning */
+    position: absolute;  /* Key: Takes it out of the layout flow */
+    top: 20px;           /* Little margin from the top */
+    left: 50%;           /* Move to center of screen */
+    transform: translateX(-50%); /* Offset by half its width to perfectly center */
+    
+    z-index: 1000;       /* Ensures it stays above the banner and form */
+    
+    width: fit-content;
+    min-width: 280px;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.hidden { display: none; }
+
+/* Grid for DOB and Gender */
+.input-row {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Gives DOB slightly more space than Gender */
+    gap: 15px;
+    width: 100%;
+}
+
+/* Ensure select dropdown matches your input styling */
+.input-wrapper select {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Fix for date input appearance */
+input[type="date"] {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Responsive fix for small screens */
+@media (max-width: 480px) {
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+}
+
+
+/* Specific fix for the Gender Select overlap */
+.input-wrapper select#gender {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    font-size: 1rem;
+    appearance: none
+}
+
+.input-group:has(#gender) .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+/* Ensures the icon stays behind the select but visible */
+.input-wrapper i.fa-venus-mars {
+    position: absolute;
+    left: 12px;
+    z-index: 1;
+    pointer-events: none; /* Allows you to click the select through the icon */
+}
+
+/* Optional: Adds a clean dropdown arrow on the right side */
+.input-group:has(#gender) .input-wrapper::after {
+    content: '\f107'; 
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    color: #888;
+    pointer-events: none;
+}
