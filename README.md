@@ -1,16 +1,67 @@
-# React + Vite
+# Hospital Management System Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, role-based Hospital Management System web application designed to simplify hospital workflows, manage user access, and handle appointments and medical records efficiently.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Project Overview
 
-## React Compiler
+The **Hospital Management System** provides a centralized platform for healthcare administration. It connects administrators, medical staff, and patients through dedicated role-based portals, streamlining daily hospital operations such as patient registration, doctor schedules, and record maintenance.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Role-Based Portals:**
+  - **Admin Dashboard:** Oversee system operations, manage doctor profiles, and review hospital metrics.
+  - **Doctor Dashboard:** View appointment schedules, check patient lists, and manage consultations.
+  - **Patient Dashboard:** Register accounts, book and view appointment statuses, and access medical details.
+- **Authentication & Security:** Secure user login, account registration, and password recovery (`ForgotPassword`).
+- **API Integration:** Client-side communication configured via dedicated API modules (`api.js`) for data retrieval and updates.
+- **Responsive Interface:** Clean, mobile-friendly dashboards styled with modular CSS for smooth user interaction.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend:** React.js (`JSX`), JavaScript (ES6+), HTML5, CSS3
+- **Build Tool:** Vite
+- **Styling:** Custom Modular CSS (`dashboard-style.css`, `login.css`, `forgot-style.css`)
+- **Version Control:** Git, GitHub
+
+---
+
+## 📁 Project Structure
+
+```text
+Hospital-Management-System-Website/
+└── client/
+    ├── src/
+    │   ├── AdminDashboard.jsx
+    │   ├── App.jsx
+    │   ├── DoctorDashboard.jsx
+    │   ├── ForgotPassword.jsx
+    │   ├── Login.jsx
+    │   ├── PatientDashboard.jsx
+    │   ├── Register.jsx
+    │   ├── api.js
+    │   ├── dashboard-style.css
+    │   ├── forgot-style.css
+    │   ├── login.css
+    │   └── main.jsx
+    ├── index.html
+    ├── package.json
+    └── package-lock.json
+```
+
+💻 Usage Instructions
+Registration / Login: Start by visiting the registration or login page to authenticate as an Admin, Doctor, or Patient.
+
+Dashboard Navigation: Once signed in, you will be directed to your specific dashboard (AdminDashboard, DoctorDashboard, or PatientDashboard).
+
+Password Recovery: If needed, use the Forgot Password link on the sign-in screen to initiate account recovery.
+
+👥 Contributors
+Bhavesh Jawale – GitHub
+
+College Project Teammates
